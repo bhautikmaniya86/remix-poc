@@ -21,8 +21,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
         <Links />
       </head>
       <body className="font-inter bg-[#F0F0F0]">
-        <SideNavigation />
-        {children}
+        <SideNavigation children={children}/>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

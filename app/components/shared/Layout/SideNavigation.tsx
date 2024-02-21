@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Button } from "~/components/ui/Button/Button";
 import { Link } from "@remix-run/react";
-import {
-  Drawer,
-  DrawerContent,
-} from "~/components/ui/drawer";
+import { Drawer, DrawerContent } from "~/components/ui/drawer";
 import { configNavigationItems } from "~/libs/navbar.utils";
 import { Logo } from "~/assets";
+import { cn } from "app/libs/utils";
 
+type SideNavigation = {
+  children: React.ReactNode;
+};
 
-
-function SideNavigation() {
+function SideNavigation({ children }: SideNavigation) {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <>
@@ -98,6 +98,16 @@ function SideNavigation() {
           </Button>
         </DrawerContent>
       </Drawer>
+      <div
+        className={cn(
+          "fixed px-8 py-4 transition-all left-0 w-full",
+          !isExpanded
+            ? "left-[120px] h-full w-[calc(100%_-_120px)]"
+            : "left-[248px] h-full w-[calc(100%_-_248px)]"
+        )}
+      >
+        {children}
+      </div>
     </>
   );
 }

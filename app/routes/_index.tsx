@@ -11,7 +11,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <main className="container mx-auto mt-2">
+    <main className="mt-2">
       <Card>
         <CardTitle>Upcoming bookings</CardTitle>
         <DataTableDemo />
