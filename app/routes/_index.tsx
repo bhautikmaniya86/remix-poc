@@ -1,13 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
-import { useState } from "react";
-import { Button } from "~/components/ui/Button/Button";
+import { DataTableDemo } from "~/components/shared/Datatable/Datatable";
+import { Card, CardTitle } from "~/components/ui/card";
 
 export const meta: MetaFunction = () => {
   return [
@@ -17,10 +10,12 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  const [count, setCount] = useState(0);
   return (
-    <Button variant="default" onClick={() => setCount(count + 1)}>
-      Home {count}
-    </Button>
+    <main className="container mx-auto mt-2">
+      <Card>
+        <CardTitle>Upcoming bookings</CardTitle>
+        <DataTableDemo />
+      </Card>
+    </main>
   );
 }
