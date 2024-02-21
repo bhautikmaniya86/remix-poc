@@ -5,7 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { Fragment } from "react";
+import SideNavigation from "./SideNavigation";
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -21,6 +21,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
         <Links />
       </head>
       <body className="font-inter bg-[#F0F0F0]">
+        <SideNavigation />
         {children}
         <ScrollRestoration />
         <Scripts />
